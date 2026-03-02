@@ -32,7 +32,7 @@ function Home() {
 
   const fetchTodos = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/home', {
+      const response = await fetch('https://socialmapper.xyz/api/home', {
         headers: getHeaders()
       });
       
@@ -52,7 +52,7 @@ function Home() {
   const addTodo = async () => {
     if (inputValue.trim() === "") return;
     try {
-      const response = await fetch('http://localhost:5000/api/home', {
+      const response = await fetch('https://socialmapper.xyz/api/home', {
         method: 'POST',
         headers: getHeaders(),
         body: JSON.stringify({ task_name: inputValue, isOk: false })
@@ -67,7 +67,7 @@ function Home() {
   };
 
 const toggleComplete = async (todo) => {
-  await fetch(`http://localhost:5000/api/home/${todo.id}`, {
+  await fetch(`https://socialmapper.xyz/api/home/${todo.id}`, {
     method: 'PUT',
     headers: getHeaders(),
     body: JSON.stringify({ isOk: !todo.isOk }) // Mevcut durumun tersini gönder (false -> true yapar)
@@ -77,7 +77,7 @@ const toggleComplete = async (todo) => {
 
   const saveEdit = async (id) => {
     try {
-      await fetch(`http://localhost:5000/api/home/${id}`, {
+      await fetch(`https://socialmapper.xyz/api/home/${id}`, {
         method: 'PUT',
         headers: getHeaders(),
         body: JSON.stringify({ task_name: editText })
@@ -91,7 +91,7 @@ const toggleComplete = async (todo) => {
 
   const deleteTodo = async (id) => {
     try {
-      await fetch(`http://localhost:5000/api/home/${id}`, {
+      await fetch(`https://socialmapper.xyz/api/home/${id}`, {
         method: 'DELETE',
         headers: getHeaders()
       });
