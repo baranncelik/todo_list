@@ -1,0 +1,261 @@
+/* Home.css - Responsive & Modern Edition */
+
+:root {
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #5bee17 100%);
+  --glass-bg: rgba(255, 255, 255, 0.95);
+  --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* --- GENEL AYARLAR --- */
+.home-container {
+  width: 100%;
+  max-width: 800px;
+  min-height: 80vh;
+  margin: 20px auto;
+  padding: 40px;
+  background-color: var(--glass-bg);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.todo-header h1 {
+  color: #1e293b;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.todo-subtitle {
+  text-align: center;
+  color: #64748b;
+  margin-bottom: 35px;
+  font-size: 1rem;
+}
+
+/* --- GÖREV EKLEME FORMU --- */
+.todo-add-form {
+  margin-bottom: 35px;
+}
+
+.todo-add-form .input-group {
+  display: flex;
+  gap: 12px;
+  background: #f8fafc;
+  padding: 10px;
+  border-radius: 18px;
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.todo-add-form .input-group:focus-within {
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+.todo-add-form input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 12px 15px;
+  font-size: 1.1rem;
+  outline: none;
+  color: #1e293b;
+}
+
+.add-btn {
+  padding: 12px 28px;
+  background: var(--primary-gradient);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.add-btn:hover {
+  transform: scale(1.05);
+}
+
+/* --- LİSTE VE ÖĞELER --- */
+.todo-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.todo-item.completed {
+  background-color: #f8fafc;
+  opacity: 0.8;
+}
+
+.todo-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex: 1;
+}
+
+.todo-text {
+  font-size: 1.1rem;
+  color: #334155;
+  font-weight: 500;
+}
+
+.completed .todo-text {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+/* --- BUTONLAR --- */
+.todo-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.todo-actions button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.edit-btn { background-color: #fef3c7 !important; color: #d97706 !important; }
+.save-btn { background-color: #dcfce7 !important; color: #15803d !important; }
+.delete-btn { background-color: #fee2e2 !important; color: #dc2626 !important; }
+
+.edit-input {
+  padding: 8px 12px;
+  border: 2px solid #5cf503;
+  border-radius: 8px;
+  width: 100%;
+  font-size: 1rem;
+}
+
+input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  accent-color: #667eea;
+  cursor: pointer;
+}
+
+/* --- MOBİL TASARIM (TAM EKRAN) --- */
+@media (max-width: 600px) {
+  body {
+    background: #ffffff;
+  }
+
+  .home-container {
+    margin: 0;
+    padding: 20px 0; /* Yan padding'i sıfırladık */
+    width: 100vw;
+    min-height: 100vh;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: #ffffff;
+    max-width: none;
+  }
+
+  .todo-header h1 {
+    font-size: 2rem;
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .todo-subtitle {
+    text-align: left;
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+
+  /* Form mobilde tam genişlik */
+  .todo-add-form {
+    padding: 0 15px;
+  }
+
+  .todo-add-form .input-group {
+    border-radius: 12px;
+    padding: 5px;
+  }
+
+  .add-btn {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+
+  /* Liste elemanları mobilde tam ekran genişliği */
+  .todo-item {
+    padding: 15px 20px;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 1px solid #f1f5f9;
+    margin-bottom: 0;
+    box-shadow: none;
+  }
+
+  .todo-left {
+    gap: 15px;
+  }
+
+  .todo-text {
+    font-size: 1rem;
+  }
+}
+/* Logout Butonu ve Üst Alan Düzeni */
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  padding: 0 10px; /* Mobilde kenarlardan hafif nefes payı */
+}
+
+.logout-btn {
+  padding: 8px 16px;
+  background: rgba(239, 68, 68, 0.1); /* Hafif kırmızı şeffaf arka plan */
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: #ef4444;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+}
+
+/* Mobilde Logout Butonu Ayarı */
+@media (max-width: 600px) {
+  .header-top {
+    padding: 0 20px;
+  }
+}

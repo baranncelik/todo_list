@@ -1,0 +1,140 @@
+/* Login.css - Genişletilmiş Versiyon */
+
+.login-container {
+  width: 100%;
+  max-width: 550px; /* Kartı büyüttük */
+  background: var(--glass);
+  padding: 50px;
+  border-radius: 24px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(15px);
+  transition: all 0.3s ease;
+}
+
+.login-card h2 {
+  text-align: center;
+  font-size: 2.5rem; /* Başlığı büyüttük */
+  margin-bottom: 10px;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
+.login-subtitle {
+  text-align: center;
+  color: #64748b;
+  margin-bottom: 35px;
+  font-size: 1rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Input Grupları */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 0.9rem;
+  padding-left: 5px;
+}
+
+.login-form input {
+  padding: 18px; /* Inputları büyüttük */
+  border: 2px solid #e2e8f0;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+  background: white;
+}
+
+.login-form input:focus {
+  border-color: #667eea;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+/* Link Alanları (Kayıt ve Şifre) */
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.forgot-password {
+  color: #6366f1;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.login-btn {
+  margin-top: 15px;
+  padding: 18px;
+  background: var(--primary-gradient);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.login-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px -3px rgba(102, 126, 234, 0.4);
+}
+
+/* Register Yönlendirmesi */
+.register-text {
+  text-align: center;
+  margin-top: 30px;
+  color: #475569;
+}
+
+.register-link {
+  color: #6366f1;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* --- MOBİL GÖRÜNÜM --- */
+@media (max-width: 600px) {
+  .login-container {
+    max-width: 100%;
+    width: 100vw; /* Ekranın tamamını kapla */
+    min-height: 100dvh; /* Mobil tarayıcı çubuklarını hesaba katarak tam boy */
+    border-radius: 0; /* Köşeleri düzleştir (katman hissini yok eder) */
+    box-shadow: none; /* Kart gölgesini kaldır (katman hissini yok eder) */
+    border: none;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Ekranın ortasına hizala */
+    overflow-y: auto; /* İçerik taşarsa kaydırma sağla */
+  }
+
+  .login-card h2 {
+    margin-top: 0;
+    font-size: 2rem;
+  }
+
+  .login-form {
+    gap: 15px; /* Mobilde inputlar arası mesafeyi biraz daralttık */
+  }
+}

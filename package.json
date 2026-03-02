@@ -1,0 +1,14 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node server/app.js",
+    "server": "nodemon server/app.js",
+    "client-install": "cd client && npm install",
+    "client-build": "cd client && npm run build",
+    "install-all": "npm install && npm run client-install"
+  },
+  "dependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
