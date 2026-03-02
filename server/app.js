@@ -22,20 +22,16 @@ Todo_element.belongsTo(User);
 
 sequelize
     .authenticate()
-        .then( ()=>[
-            console.log("connect to database is successfull.")
-        ])
-        .catch((err)=>{
-            console.log(err);
-        } )
-
-
-
-        sequelize.sync({force : false})
-            .then()
-            .catch((err) =>{
-                console.log(err)
-            })
+    .then(() => {
+        console.log("Database bağlantısı başarılı.");
+        return sequelize.sync({ alter: true }); 
+    })
+    .then(() => {
+        console.log("Tablolar güncellendi/oluşturuldu.");
+    })
+    .catch((err) => {
+        console.error("Veritabanı hatası:", err);
+    });
 
 
 const PORT = process.env.PORT || 5000;
